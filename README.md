@@ -1,7 +1,14 @@
 # [NTIRE 2023 Challenge on Image Super-Resolution (x4)](https://cvlai.net/ntire/2023/) @ [CVPR 2023](https://cvpr2023.thecvf.com/)
-
+##test command
+     ```python
+    CUDA_VISIBLE_DEVICES=0 python test_demo.py --data_dir [path to your data dir] --save_dir [path to your save dir] --model_id 11
+    ```
+##if can't run through it please run the following command:
+    ```python
+    CUDA_VISIBLE_DEVICES=0 python test_sample.py --model ./model_zoo/team11_EDT.pth --input (the path of LR) --output (the path of HR) --gt (the path of HR)
+    ```
 ## How to test the baseline model?
-
+    
 1. `git clone https://github.com/zhengchen1999/NTIRE2023_ImageSR_x4.git`
 2. Select the model you would like to test from [`run.sh`](./run.sh)
     ```bash
