@@ -15,7 +15,7 @@ import torch
 import argparse
 import json
 import glob
-from utils.modules.edt import Network
+from models.team11_EDT import Network
 from pprint import pprint
 from utils.model_summary import get_model_activation, get_model_flops
 from utils import utils_logger
