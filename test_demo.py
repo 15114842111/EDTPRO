@@ -346,7 +346,7 @@ def main(args):
                 test_results = run(model, model_name, data_range, tile, logger, device, args, mode="test")
                 results[model_name].update(test_results)
 
-        input_dim = (3, 192, 192)  # set the input dimension
+        input_dim = (3, 48, 48)  # set the input dimension
         activations, num_conv = get_model_activation(model, input_dim)
         activations = activations/10**6
         logger.info("{:>16s} : {:<.4f} [M]".format("#Activations", activations))
