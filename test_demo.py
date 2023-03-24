@@ -123,7 +123,7 @@ def select_model(args, device):
         # model.load_state_dict(torch.load(model_path), strict=True)
     elif model_id == 11:
         from models.team11_EDT import edict
-        name, data_range = f"{model_id:11}_EDT_baseline", 255.0
+        name, data_range = f"{model_id:02}_EDT_baseline", 255.0
         model_path = os.path.join('model_zoo', 'team11_EDT.pth')
         model = Network(config)
         model.load_state_dict(torch.load(model_path), strict=True)
@@ -346,7 +346,7 @@ def main(args):
                 test_results = run(model, model_name, data_range, tile, logger, device, args, mode="test")
                 results[model_name].update(test_results)
 
-        input_dim = (3, 256, 256)  # set the input dimension
+        input_dim = (3, 192, 192)  # set the input dimension
         activations, num_conv = get_model_activation(model, input_dim)
         activations = activations/10**6
         logger.info("{:>16s} : {:<.4f} [M]".format("#Activations", activations))
